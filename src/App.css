@@ -5,38 +5,59 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.articleCardGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr repeat(4, 40px) 150px;
+  grid-template-rows: 80px 20px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.articleCardTitle {
+  grid-area: 1 / 1 / 2 / 7;
+  font-size: large;
+  text-align: left;
+}
+.articleCardAuthor {
+  display: grid;
+  grid-area: 2 / 1 / 3 / 2;
+  font-size: small;
+  text-align: left;
+  padding: 0px;
+}
+.articleCardDate {
+  grid-area: 2 / 2 / 3 / 3;
+  font-size: small;
+  text-align: left;
+}
+.articleCardVotesIcon {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.articleCardVotes {
+  grid-area: 2 / 4 / 3 / 5;
+  font-size: small;
+  text-align: left;
+}
+.articleCardCommentsIcon {
+  grid-area: 2 / 5 / 3 / 6;
+  width: "20px";
+  height: "20px";
+}
+.articleCardComments {
+  grid-area: 2 / 6 / 3 / 7;
+  font-size: small;
+  text-align: left;
+}
+.articleCardImgCell {
+  grid-area: 1 / 7 / 3 / 8;
+  width: "150px";
+  height: "100px";
 }
