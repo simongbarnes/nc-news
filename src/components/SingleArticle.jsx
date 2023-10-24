@@ -1,5 +1,5 @@
 import fetchArticle from "../utils/fetchArticle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import convertTimeStamp from "../utils/convertTimeStamp";
 import heart from "../assets/heart-fill.png";
@@ -12,32 +12,36 @@ export default function SingleArticle() {
   const [votes, setVotes] = useState("");
   const [date, setDate] = useState("");
   const [imgUrl, setImgUrl] = useState("");
+  const [loading, setIsLoading] = useState(true);
 
-  fetchArticle(article_id)
-    .then(function (response) {
-      // handle success
-      const article = response.data.article;
-      setTitle(article.title);
-      setAuthor(article.author);
-      setDate(convertTimeStamp(article.created_at));
-      setVotes(article.votes);
-      setImgUrl(article.article_img_url);
-      setBody(article.body);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
-    });
+  useEffect(() => {
+    fetchArticle(article_id)
+      .then(function (response) {
+        const article = response.data.article;
+        setTitle(article.title);
+        setAuthor(article.author);
+        setDate(convertTimeStamp(article.created_at));
+        setVotes(article.votes);
+        setImgUrl(article.article_img_url);
+        setBody(article.body);
+        setIsLoading(false);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
-  ///put loading message here
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>
       <div className="singleArticleImage">
-        <img src={imgUrl} alt="image to illustrate article" width="600px" height="400px"></img>
+        <img
+          src={imgUrl}
+          alt="image to illustrate article"
+          width="450px"
+          height="300px"
+        ></img>
       </div>
       <div className="singleArticleTitle">
         <h2>{title}</h2>
