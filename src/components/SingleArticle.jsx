@@ -1,8 +1,10 @@
 import fetchArticle from "../utils/fetchArticle";
+import {Link} from "react-router-dom"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import convertTimeStamp from "../utils/convertTimeStamp";
 import heart from "../assets/heart-fill.png";
+import CommentList from "./CommentList";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
@@ -24,6 +26,7 @@ export default function SingleArticle() {
 
   return (
     <>
+    <Link to={`/`}>back to articles</Link>
       <div className="singleArticleImage">
         <img
           src={article.article_img_url}
@@ -58,6 +61,8 @@ export default function SingleArticle() {
         </div>
         <div className="votes-empty-right"></div>
       </div>
+      <CommentList articleId={article.article_id} />
+      <Link to={`/`}>back to articles</Link>
     </>
   );
 }
