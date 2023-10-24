@@ -6,27 +6,6 @@ export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
   const [loading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //     fetchArticles()
-  //     .then(function (response) {
-  //       // handle success
-  //     //   console.log(response.data.articles)
-  //       setArticles(response.data.articles);
-  //     // setTitle(article.title);
-  //       // setAuthor(article.author);
-  //       // setDate(article.created_at);
-  //       // setVotes(article.votes);
-  //     //   setcommentCount(article.comment_count);
-  //     })
-  //     .catch(function (error) {
-  //       // handle error
-  //       console.log(error);
-  //     })
-  //     .finally(function () {
-  //       // always executed
-  //     });
-  //   }, []);
-
   useEffect(() => {
     fetchArticles().then((response) => {
       setArticles(response.data.articles);

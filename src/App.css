@@ -19,10 +19,11 @@
 
 .articleCardGrid {
   display: grid;
-  grid-template-columns: 2fr 1fr repeat(4, 40px) 150px;
+  grid-template-columns: 1fr 100px repeat(4, 30px) 150px;
   grid-template-rows: 80px 20px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  margin-bottom: 4px;
 }
 
 .articleCardTitle {
