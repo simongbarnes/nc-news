@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import convertTimeStamp from "../utils/convertTimeStamp";
 import heart from "../assets/heart-fill.png";
+import CommentList from "./CommentList";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
@@ -43,6 +44,7 @@ export default function SingleArticle() {
       <article className="singleArticleBody">
         <p>{article.body}</p>
       </article>
+      <CommentList articleId={article.article_id} />
       <div className="votes-container">
         <div className="votes-empty-left"></div>
         <div className="votes-items-icon">
