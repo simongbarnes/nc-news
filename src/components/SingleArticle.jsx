@@ -6,24 +6,13 @@ import heart from "../assets/heart-fill.png";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [body, setBody] = useState("");
-  const [votes, setVotes] = useState("");
-  const [date, setDate] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
+  const [article, setArticle] = useState("");
   const [loading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchArticle(article_id)
       .then(function (response) {
-        const article = response.data.article;
-        setTitle(article.title);
-        setAuthor(article.author);
-        setDate(convertTimeStamp(article.created_at));
-        setVotes(article.votes);
-        setImgUrl(article.article_img_url);
-        setBody(article.body);
+        setArticle(response.data.article);
         setIsLoading(false);
       })
       .catch(function (error) {
@@ -37,22 +26,22 @@ export default function SingleArticle() {
     <>
       <div className="singleArticleImage">
         <img
-          src={imgUrl}
+          src={article.article_img_url}
           alt="image to illustrate article"
           width="450px"
           height="300px"
         ></img>
       </div>
       <div className="singleArticleTitle">
-        <h2>{title}</h2>
+        <h2>{article.title}</h2>
       </div>
       <div className="singleArticleAuthorDate">
         <p>
-          by {author} {date}
+          by {article.author} {convertTimeStamp(article.created_at)}
         </p>
       </div>
       <article className="singleArticleBody">
-        <p>{body}</p>
+        <p>{article.body}</p>
       </article>
       <div className="votes-container">
         <div className="votes-empty-left"></div>
@@ -65,7 +54,7 @@ export default function SingleArticle() {
           ></img>
         </div>
         <div className="votes-items-count">
-          <div>{votes}</div>
+          <div>{article.votes}</div>
         </div>
         <div className="votes-empty-right"></div>
       </div>
