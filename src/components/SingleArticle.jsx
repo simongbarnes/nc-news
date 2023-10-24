@@ -6,7 +6,7 @@ import heart from "../assets/heart-fill.png";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
-  const [article, setArticle] = useState("");
+  const [article, setArticle] = useState({});
   const [loading, setIsLoading] = useState(true);
 
   useEffect(() => {
