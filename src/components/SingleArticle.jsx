@@ -27,40 +27,36 @@ export default function SingleArticle() {
   return (
     <>
     <Link to={`/`}>back to articles</Link>
-      <div className="singleArticleImage">
+      <figure className="singleArticleImage">
         <img
           src={article.article_img_url}
           alt="image to illustrate article"
           width="450px"
           height="300px"
         ></img>
-      </div>
-      <div className="singleArticleTitle">
-        <h2>{article.title}</h2>
-      </div>
-      <div className="singleArticleAuthorDate">
-        <p>
+      </figure>
+        <h2 className="singleArticleTitle">{article.title}</h2>
+        <p className="singleArticleAuthorDate">
           by {article.author} {convertTimeStamp(article.created_at)}
         </p>
-      </div>
-      <article className="singleArticleBody">
+      <main className="singleArticleBody">
         <p>{article.body}</p>
-      </article>
-      <div className="votes-container">
+      </main>
+      <section className="votes-container">
         <div className="votes-empty-left"></div>
-        <div className="votes-items-icon">
+        <figure className="votes-items-icon">
           <img
             src={heart}
             alt="icon indicating that the adjacent number is a count of votes"
             width="20px"
             height="20px"
           ></img>
-        </div>
-        <div className="votes-items-count">
+        </figure>
+        <figure className="votes-items-count">
           <div>{article.votes}</div>
-        </div>
+        </figure>
         <div className="votes-empty-right"></div>
-      </div>
+      </section>
       <CommentList articleId={article.article_id} />
       <Link to={`/`}>back to articles</Link>
     </>
