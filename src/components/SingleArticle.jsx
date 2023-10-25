@@ -43,8 +43,12 @@ export default function SingleArticle() {
         <p>{article.body}</p>
       </main> 
       <VoteAdder articleId={article.article_id} votes={article.votes}/>
+      <br/>
+      <Link to={`/comments/${article.article_id}/new`}>add a comment</Link>
       <CommentList articleId={article.article_id} />
-      <Link to={`/`}>back to articles</Link>
+      <Link to={`/comments/${article.article_id}/new`}>add a comment</Link>
+      <br/>
+      <Link to={"/"}>back to articles</Link>
     </>
   );
 }
