@@ -129,6 +129,7 @@ ul {
 .comment-author {
   grid-area: 1 / 1 / 2 / 6;
   text-align: left;
+  margin: 0%;
 }
 .comment-date {
   grid-area: 1 / 6 / 2 / 7;
@@ -147,6 +148,7 @@ ul {
 }
 .comment-vote-count {
   grid-area: 3 / 4 / 4 / 5;
+  margin: 0%;
 }
 .comment-pad-right {
   grid-area: 3 / 5 / 4 / 7;
