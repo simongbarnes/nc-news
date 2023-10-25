@@ -1,5 +1,6 @@
 import { useState } from "react";
 import updateArticle from "../utils/updateArticle";
+import votesImg from "../assets/thumbs-up.png";
 
 export default function VoteAdder({ articleId, votes }) {
   const [newVote, setnewVote] = useState(0);
@@ -20,7 +21,15 @@ export default function VoteAdder({ articleId, votes }) {
     <>
       <section className="votes-container">
         <div className="votes-empty-left"></div>
-        <p className="votes-items-count">votes {votes + newVote} </p>
+        <div className="votes-icon">
+          <img
+            src={votesImg}
+            alt="a thumbs up icon"
+            width="20px"
+            height="20px"
+          ></img>
+        </div>
+        <p className="votes-count">{votes + newVote} </p>
         <button className="votes-button-upvote"
           disabled={newVote === 1}
           aria-label="like"

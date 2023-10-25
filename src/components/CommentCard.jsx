@@ -1,5 +1,5 @@
 import convertTimeStamp from "../utils/convertTimeStamp";
-import heart from "../assets/heart-fill.png";
+import votesImg from "../assets/thumbs-up.png";
 
 export default function CommentCard(commentArg) {
 
@@ -18,8 +18,8 @@ export default function CommentCard(commentArg) {
         <div className="comment-pad-left"></div>
         <div className="comment-vote-icon">
           <img
-            src={heart}
-            alt="a red heart icon"
+            src={votesImg}
+            alt="a thumbs up icon"
             width="20px"
             height="20px"
           ></img>

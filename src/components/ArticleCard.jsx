@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import convertTimeStamp from "../utils/convertTimeStamp";
-import heart from "../assets/heart-fill.png";
+import votesImg from "../assets/thumbs-up.png";
 import comment from "../assets/comment.png";
 
 export default function ArticleCard(article) {
@@ -33,8 +33,8 @@ export default function ArticleCard(article) {
         <time className="articleCardDate">{date}</time>
         <img
           className="articleCardVotesIcon"
-          src={heart}
-          alt="a red heart icon"
+          src={votesImg}
+          alt="a thumbs up icon"
           width="20px"
           height="20px"
         ></img>
