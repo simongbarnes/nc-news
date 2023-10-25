@@ -83,7 +83,7 @@ ul {
 
 .votes-container {
   display: grid;
-  grid-template-columns: 1fr repeat(2, 20px) 1fr;
+  grid-template-columns: 1fr 20px 20px 20px 20px 1fr;
   grid-template-rows: 20px;
   grid-column-gap: 4px;
   grid-row-gap: 0px;
@@ -92,14 +92,29 @@ ul {
 .votes-empty-left {
   grid-area: 1 / 1 / 2 / 2;
 }
-.votes-items-icon {
+.votes-icon {
   grid-area: 1 / 2 / 2 / 3;
 }
-.votes-items-count {
+.votes-count {
   grid-area: 1 / 3 / 2 / 4;
+  margin: 0%;
+  text-align: right;
+  color: blue;
+}
+.votes-button-upvote {
+  grid-area: 1 / 4 / 2 / 5;
+  color: blue;
+  font-size: medium;
+  font-weight: bold;
+}
+.votes-button-downvote {
+  grid-area: 1 / 5 / 2 / 6;
+  color: blue;
+  font-size: medium;
+  font-weight: bold;
 }
 .votes-empty-right {
-  grid-area: 1 / 4 / 2 / 5;
+  grid-area: 1 / 6 / 2 / 7;;
 }
 
 .comment-container {

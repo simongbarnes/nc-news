@@ -3,8 +3,8 @@ import {Link} from "react-router-dom"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import convertTimeStamp from "../utils/convertTimeStamp";
-import heart from "../assets/heart-fill.png";
 import CommentList from "./CommentList";
+import VoteAdder from "./VoteAdder";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
@@ -41,22 +41,8 @@ export default function SingleArticle() {
         </p>
       <main className="singleArticleBody">
         <p>{article.body}</p>
-      </main>
-      <section className="votes-container">
-        <div className="votes-empty-left"></div>
-        <figure className="votes-items-icon">
-          <img
-            src={heart}
-            alt="icon indicating that the adjacent number is a count of votes"
-            width="20px"
-            height="20px"
-          ></img>
-        </figure>
-        <figure className="votes-items-count">
-          <div>{article.votes}</div>
-        </figure>
-        <div className="votes-empty-right"></div>
-      </section>
+      </main> 
+      <VoteAdder articleId={article.article_id} votes={article.votes}/>
       <CommentList articleId={article.article_id} />
       <Link to={`/`}>back to articles</Link>
     </>
