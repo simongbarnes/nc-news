@@ -18,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/articles" element={<Home />} />
+        <Route path="/articles/topics/:topic" element={<Home />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/comments/:article_id/new" element={<NewComment user={user} />} />       
       </Routes>
