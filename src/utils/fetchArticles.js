@@ -11,8 +11,6 @@ export default function fetchArticles({topic}) {
 
   path = `https://nc-news-2d8c.onrender.com/api/articles${queryStr}`
 
-  console.log(path, "<== fetchArticles List")
-
   return axios
     .get(path)
 }

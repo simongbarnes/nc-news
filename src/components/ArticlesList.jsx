@@ -10,16 +10,14 @@ export default function ArticlesList({topic}) {
 
   const [currentTopic, setCurrentTopic] = useState(topic);
 
-  console.log(currentTopic, "<== Articles List")
-
   queries.topic = currentTopic;
 
   useEffect(() => {
     fetchArticles(queries).then((response) => {
       setArticles(response.data.articles);
-      console.log(response.data.articles, "<===data")
       setIsLoading(false);
-    });
+      return
+    })
   }, [currentTopic]);
 
   if (loading) return <p>Loading...</p>;
@@ -33,7 +31,7 @@ export default function ArticlesList({topic}) {
         {articles.map((article, index) => {
           return (
             <li key={index}>
-              <ArticleCard article={articles[index]} />
+              <ArticleCard article={article} />
             </li>
           );
         })}

@@ -26,16 +26,12 @@ export default function TopicSelector({ currentTopic, setCurrentTopic}) {
           id="topics"
           value={currentTopic}
           onChange={(event) => {
-            console.log(event.target.value, "<===== On CHANGE")
-            // console.log(value, "<===== Value")
             if (event.target.value === "all"){
-                console.log(event.target.value, "Going to /")
                 setCurrentTopic(event.target.value)
                 navigate('/')
             } else {
-                console.log(event.target.value, `Going to /articles/${event.target.value}`)
                 setCurrentTopic(event.target.value)
-                navigate(`/articles/${event.target.value}`)
+                navigate(`/articles/topics/${event.target.value}`)
             }
           }}
         >

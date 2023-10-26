@@ -21,7 +21,7 @@ export default function ArticleCard(article) {
     setVotes(article.article.votes);
     setCommentCount(article.article.comment_count);
     setImgUrl(article.article.article_img_url);
-  }, []);
+  }, [article]);
 
   return (
     <>
