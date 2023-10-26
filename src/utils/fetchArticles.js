@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export default function fetchArticles({topic}) {
+export default function fetchArticles({topic, sort, order}) {
 
   let path = ""
-  let queryStr = ""
+  let queryStr = `?sort_by=${sort}&&order=${order}`
 
   if (topic !== "all"){
-    queryStr = `?topic=${topic}`
+    queryStr += `&&topic=${topic}`
   }
 
   path = `https://nc-news-2d8c.onrender.com/api/articles${queryStr}`
