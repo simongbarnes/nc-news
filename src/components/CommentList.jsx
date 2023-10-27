@@ -6,13 +6,16 @@ export default function CommentList (article){
 
     const [comments, setComments] = useState([]);
     const [loading, setIsLoading] = useState(true);
+    const [commentDeleted, setCommentDeleted] = useState(false);
   
     useEffect(() => {
-      fetchComments(article.articleId).then((response) => {
+      fetchComments(article.articleId)
+      .then((response) => {
         setComments(response.data.comments);
+        setCommentDeleted(false);
         setIsLoading(false);
       });
-    }, []);
+    }, [commentDeleted]);
   
     if (loading) return <p>Loading comments...</p>;
   
@@ -20,10 +23,10 @@ export default function CommentList (article){
       <>
       <h3>Comments</h3>
         <ul>
-        {comments.map((comment, index) => {
+        {comments.map((comment) => {
           return (
-            <li key={index} >
-              <CommentCard comment={comments[index]} />
+            <li key={comment.comment_id} >
+              <CommentCard comment={comment} setCommentDeleted={setCommentDeleted} commentDeleted={commentDeleted}/>
             </li>
           );
         })}

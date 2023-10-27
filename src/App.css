@@ -120,7 +120,7 @@ ul {
 .comment-container {
   display: grid;
   grid-template-columns: 150px 1fr repeat(2, 30px) 1fr 150px;
-  grid-template-rows: 20px 1fr 20px;
+  grid-template-rows: 20px 1fr 30px;
   grid-column-gap: 4px;
   grid-row-gap: 4px;
   margin-bottom: 20px;
@@ -150,6 +150,15 @@ ul {
   grid-area: 3 / 4 / 4 / 5;
   margin: 0%;
 }
-.comment-pad-right {
-  grid-area: 3 / 5 / 4 / 7;
+.comment-delete {
+  grid-area: 3 / 5 / 4 / 6;
+  text-align: left;
+}
+
+.progress-message {
+  grid-area: 3 / 6 / 4 / 7;
+  color: red;
+  margin: 0%;
+  text-align: left;
+  font-weight: bold;
 }
