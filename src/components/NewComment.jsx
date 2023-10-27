@@ -26,7 +26,6 @@ export default function NewComment(user) {
         })
         .catch((error) => {
           setPostBtnDisabled(false);
-          console.log(error.response.status)
           if (error.response.status === 404){
             setErrorMsg("Post failed! Article does not exist");
           } else {
