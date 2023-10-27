@@ -1,13 +1,13 @@
 import fetchArticle from "../utils/fetchArticle";
-import {Link} from "react-router-dom"
+import {Link, useNavigate, useParams} from "react-router-dom"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import convertTimeStamp from "../utils/convertTimeStamp";
 import CommentList from "./CommentList";
 import VoteAdder from "./VoteAdder";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
+  const navigate = useNavigate();
   const [article, setArticle] = useState({});
   const [loading, setIsLoading] = useState(true);
 
@@ -18,7 +18,7 @@ export default function SingleArticle() {
         setIsLoading(false);
       })
       .catch(function (error) {
-        console.log(error);
+        navigate(`/error/articles/${error.response.status}`);
       });
   }, []);
 
