@@ -16,7 +16,6 @@ export default function SortSelector({ currentSort, setCurrentSort, currentOrder
         <select
           name="sort"
           id="sort"
-          // value={"created_at"}
           onChange={(event) => {
             setCurrentSort(event.target.value);
           }}
@@ -32,7 +31,6 @@ export default function SortSelector({ currentSort, setCurrentSort, currentOrder
         <select
           name="order"
           id="order"
-          // value={"desc"}
           onChange={(event) => {
             setCurrentOrder(event.target.value);
           }}
