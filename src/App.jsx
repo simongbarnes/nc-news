@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import fetchCurrentUser from "./utils/fetchCurrentUser";
 import SingleArticle from "./components/SingleArticle";
 import NewComment from "./components/NewComment";
+import ErrorHandler from "./components/ErrorHandler";
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
         <Route path="/articles/topics/:topic" element={<Home />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/comments/:article_id/new" element={<NewComment user={user} />} />       
+        <Route path="/error" element={<ErrorHandler />} /> 
+        <Route path="/error/:resource/:status" element={<ErrorHandler />} /> 
+        <Route path="*" element={<Navigate to="/error"/>} />
       </Routes>
     </>
   );

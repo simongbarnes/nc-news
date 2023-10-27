@@ -162,3 +162,12 @@ ul {
   text-align: left;
   font-weight: bold;
 }
+
+.error-message {
+font-size: larger;
+}
+
+#errorMsg {
+  color: red;
+  font-size: larger;
+}

@@ -12,7 +12,7 @@ export default function TopicSelector({ currentTopic, setCurrentTopic}) {
     fetchTopics().then((response) => {
       setTopics(response.data.topics);
       setTopicsLoading(false);
-    });
+    })
   }, []);
 
   if (topicsLoading) return <p>Loading...</p>;
