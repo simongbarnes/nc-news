@@ -7,6 +7,7 @@ export default function NewComment(user) {
   const [errorMsg, setErrorMsg] = useState("");
   const [postBtnDisabled, setPostBtnDisabled] = useState(false);
   const [returnLinkText, setReturnLinkText] = useState("cancel");
+  const navigate = useNavigate();
   const { article_id } = useParams();
 
   const addNewComment = (e) => {
@@ -26,14 +27,18 @@ export default function NewComment(user) {
         })
         .catch((error) => {
           setPostBtnDisabled(false);
-          if (error.response.status === 404){
-            setErrorMsg("Post failed! Article does not exist");
-          } else {
-            if (error.response.status === 400){
-              setErrorMsg("Post failed! Article ID invalid");
+          if (error.response) {
+            if (error.response.status === 404){
+              setErrorMsg("Post failed! Article does not exist");
             } else {
-              setErrorMsg("Post failed!");
-            }
+              if (error.response.status === 400){
+                setErrorMsg("Post failed! Article ID invalid");
+              } else {
+                setErrorMsg("Post failed!");
+              }
+            } 
+          } else {
+            navigate("/error/articles/noresponse");
           } 
         });
 

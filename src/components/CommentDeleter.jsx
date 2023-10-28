@@ -36,7 +36,6 @@ export default function CommentDeleter({
               .catch((error) => {
                 setDeleteBtnDisabled(false);
                 setProgressMsg("DELETE FAILED!");
-                console.log(error);
               });
 
             setDeleteBtnDisabled(true);

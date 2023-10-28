@@ -14,6 +14,13 @@ export default function CommentList (article){
         setComments(response.data.comments);
         setCommentDeleted(false);
         setIsLoading(false);
+      })
+      .catch(function (error) {
+        if (error.response) {
+          navigate(`/error/comments/${error.response.status}`);
+        } else {
+          navigate("/error/articles/noresponse");
+        }
       });
     }, [commentDeleted]);
   
