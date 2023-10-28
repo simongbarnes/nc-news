@@ -11,8 +11,15 @@ export default function TopicSelector({ currentTopic, setCurrentTopic}) {
   useEffect(() => {
     fetchTopics().then((response) => {
       setTopics(response.data.topics);
-      setTopicsLoading(false);
+      setTopicsLoading(false)
     })
+    .catch(function (error) {
+      if (error.response) {
+        navigate(`/error/topics/${error.response.status}`);
+      } else {
+        navigate("/error/articles/noresponse");
+      } 
+    });
   }, []);
 
   if (topicsLoading) return <p>Loading...</p>;

@@ -113,8 +113,11 @@ ul {
   font-size: medium;
   font-weight: bold;
 }
-.votes-empty-right {
+.votes-error{
   grid-area: 1 / 6 / 2 / 7;;
+  text-align: center;
+  color: red;
+  margin:0%
 }
 
 .comment-container {

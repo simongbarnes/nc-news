@@ -11,6 +11,10 @@ export default function ErrorHandler() {
 			code = "400";
 			message = "Invalid path";
 		  break;
+		  case "noresponse":
+			code = '';
+			message = `No response - check your internet connection`;
+		  break;
 		case "404":
 			code = '404';
 			message = `No matching ${resource} found`;

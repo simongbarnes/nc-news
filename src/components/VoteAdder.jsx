@@ -3,16 +3,18 @@ import updateArticle from "../utils/updateArticle";
 import votesImg from "../assets/thumbs-up.png";
 
 export default function VoteAdder({ articleId, votes }) {
-  const [newVote, setnewVote] = useState(0);
+  const [newVote, setNewVote] = useState(0);
   const [isError, setError] = useState(false);
 
   const updateVotes = (value) => {
-    setnewVote((currentVotes) => {
+    setError(false);
+    setNewVote((currentVotes) => {
       return currentVotes + value;
     });
     const changes = { inc_votes: value };
-    updateArticle(articleId, changes).catch(() => {
-      setnewVote(0);
+    updateArticle(articleId, changes)
+    .catch(() => {
+      setNewVote(0);
       setError(true);
     });
   };
@@ -48,8 +50,7 @@ export default function VoteAdder({ articleId, votes }) {
         >
           -
         </button>
-        <div className="votes-empty-right"></div>
-        {isError && <p>error: voting unavailable</p>}
+        {isError && <p className="votes-error">error: vote unsuccessful</p>}
       </section>
     </>
   );

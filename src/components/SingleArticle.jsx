@@ -18,7 +18,11 @@ export default function SingleArticle() {
         setIsLoading(false);
       })
       .catch(function (error) {
-        navigate(`/error/articles/${error.response.status}`);
+        if (error.response) {
+          navigate(`/error/articles/${error.response.status}`);
+        } else {
+          navigate("/error/articles/noresponse");
+        } 
       });
   }, []);
 
