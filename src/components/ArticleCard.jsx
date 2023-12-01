@@ -25,35 +25,29 @@ export default function ArticleCard(article) {
 
   return (
     <>
-      <section className="flex flex-row">
+      <section className="flex flex-row p-4 border-b border-gray-100">
         <div className="basis-3/4">
-          <header className="articleCardTitle">
+          <header className="font-bold pb-3">
             <Link to={`/articles/${articleId}`}>{title}</Link>
           </header>
-          <p className="articleCardAuthor">by {author}</p>
-          <time className="articleCardDate">{date}</time>
-          <img
-            className="articleCardVotesIcon"
-            src={votesImg}
-            alt="a thumbs up icon"
-            width="20px"
-            height="20px"
-          ></img>
-          <p className="articleCardVotes">{votes}</p>
-          <img
-            className="articleCardCommentsIcon"
-            src={comment}
-            alt="comments icon"
-            width="20px"
-            height="20px"
-          ></img>
-          <p className="articleCardComments">{commentCount}</p>
+          <div className="flex flex-row text-sm">
+            <p className="basis-1/2">by {author}</p>
+            <time className="basis-1/2">{date}</time>
+            <div className="basis-5">
+              <img
+                src={votesImg}
+                alt="a thumbs up icon"
+              ></img>
+            </div>
+            <p className="basis-10 text-center">{votes}</p>
+            <div className="basis-5">
+            <img src={comment} alt="comments icon"></img>
+            </div>
+            <p className="basis-10 text-center">{commentCount}</p>
+          </div>
         </div>
         <figure className="basis-1/4">
-          <img
-            src={imgUrl}
-            alt="image to illustrate article"
-          ></img>
+          <img src={imgUrl} alt="image to illustrate article"></img>
         </figure>
       </section>
     </>
