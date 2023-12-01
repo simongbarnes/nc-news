@@ -25,34 +25,34 @@ export default function ArticleCard(article) {
 
   return (
     <>
-      <section className="articleCardGrid">
-        <header className="articleCardTitle">
-          <Link to={`/articles/${articleId}`}>{title}</Link>
-        </header>
-        <p className="articleCardAuthor">by {author}</p>
-        <time className="articleCardDate">{date}</time>
-        <img
-          className="articleCardVotesIcon"
-          src={votesImg}
-          alt="a thumbs up icon"
-          width="20px"
-          height="20px"
-        ></img>
-        <p className="articleCardVotes">{votes}</p>
-        <img
-          className="articleCardCommentsIcon"
-          src={comment}
-          alt="comments icon"
-          width="20px"
-          height="20px"
-        ></img>
-        <p className="articleCardComments">{commentCount}</p>
-        <figure className="articleCardImgCell">
+      <section className="flex flex-row">
+        <div className="basis-3/4">
+          <header className="articleCardTitle">
+            <Link to={`/articles/${articleId}`}>{title}</Link>
+          </header>
+          <p className="articleCardAuthor">by {author}</p>
+          <time className="articleCardDate">{date}</time>
+          <img
+            className="articleCardVotesIcon"
+            src={votesImg}
+            alt="a thumbs up icon"
+            width="20px"
+            height="20px"
+          ></img>
+          <p className="articleCardVotes">{votes}</p>
+          <img
+            className="articleCardCommentsIcon"
+            src={comment}
+            alt="comments icon"
+            width="20px"
+            height="20px"
+          ></img>
+          <p className="articleCardComments">{commentCount}</p>
+        </div>
+        <figure className="basis-1/4">
           <img
             src={imgUrl}
             alt="image to illustrate article"
-            width="150px"
-            height="100px"
           ></img>
         </figure>
       </section>
