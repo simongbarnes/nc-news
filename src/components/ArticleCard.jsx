@@ -25,10 +25,11 @@ export default function ArticleCard(article) {
 
   return (
     <>
+    <Link to={`/articles/${articleId}`}>
       <section className="flex flex-row p-4 border-b border-gray-100">
         <div className="basis-3/4">
           <header className="font-bold pb-3">
-            <Link to={`/articles/${articleId}`}>{title}</Link>
+            {title}
           </header>
           <div className="flex flex-row text-sm">
             <p className="basis-1/2">by {author}</p>
@@ -50,6 +51,7 @@ export default function ArticleCard(article) {
           <img src={imgUrl} alt="image to illustrate article"></img>
         </figure>
       </section>
+      </Link>
     </>
   );
 }
