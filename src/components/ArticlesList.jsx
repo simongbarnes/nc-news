@@ -4,6 +4,7 @@ import ArticleCard from "./ArticleCard";
 import fetchArticles from "../utils/fetchArticles";
 import TopicSelector from "./TopicSelector";
 import SortSelector from "./SortSelector";
+import FeatureArticle from "./FeatureArticle";
 
 export default function ArticlesList({ topic }) {
   const [articles, setArticles] = useState([]);
@@ -52,13 +53,17 @@ export default function ArticlesList({ topic }) {
         currentOrder={currentOrder}
         setCurrentOrder={setCurrentOrder}
       />
-      <ul>
+      <ul className="lg:columns-2">
         {articles.map((article, index) => {
-          return (
-            <li key={index}>
-              <ArticleCard article={article} />
-            </li>
-          );
+          if (index === 0) {
+            return <FeatureArticle articleId={article.article_id} />;
+          } else {
+            return (
+              <li key={index}>
+                <ArticleCard article={article} />
+              </li>
+            );
+          }
         })}
       </ul>
     </>
