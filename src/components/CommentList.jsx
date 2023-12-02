@@ -28,7 +28,7 @@ export default function CommentList (article){
   
     return (
       <>
-      <h3>Comments</h3>
+      <h3 className="font-bold p-4">Comments</h3>
         <ul>
         {comments.map((comment) => {
           return (
