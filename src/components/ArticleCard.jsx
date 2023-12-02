@@ -33,7 +33,6 @@ export default function ArticleCard(article) {
           </header>
           <div className="flex flex-row text-sm">
             <p className="basis-1/2">by {author}</p>
-            <time className="basis-1/2">{date}</time>
             <div className="basis-5">
               <img
                 src={votesImg}
@@ -45,6 +44,7 @@ export default function ArticleCard(article) {
             <img src={comment} alt="comments icon"></img>
             </div>
             <p className="basis-10 text-center">{commentCount}</p>
+            <time className="basis-1/2 text-right mr-3">{date}</time>
           </div>
         </div>
         <figure className="basis-1/4">

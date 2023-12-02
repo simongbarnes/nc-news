@@ -1,8 +1,8 @@
 export default function convertTimeStamp(timeStamp) {
 
-    let dateAndTime = "";
+    let convertedDate = "";
 
-    dateAndTime = timeStamp.slice(8,10) + "-" + timeStamp.slice(5,7) + "-" + timeStamp.slice(0,4) + " " + timeStamp.slice(12,16)
+    convertedDate = timeStamp.slice(8,10) + "-" + timeStamp.slice(5,7) + "-" + timeStamp.slice(0,4)
 
-    return dateAndTime;
+    return convertedDate;
   }
