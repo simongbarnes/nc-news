@@ -29,7 +29,7 @@ export default function CommentCard({
             setProgressMsg={setProgressMsg}
           />
         </section>
-        <p className="progress-message">{progressMsg}</p>
+        <p className="text-red-500">{progressMsg}</p>
       </section>
     </>
   );

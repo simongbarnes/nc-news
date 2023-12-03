@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
 import fetchComments from "../utils/fetchComments";
+import NewComment from "./NewComment";
 
 export default function CommentList (article){
 
@@ -28,6 +29,7 @@ export default function CommentList (article){
   
     return (
       <>
+      <NewComment />
       <h3 className="font-bold p-4">Comments</h3>
         <ul>
         {comments.map((comment) => {

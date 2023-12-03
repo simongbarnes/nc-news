@@ -52,20 +52,9 @@ export default function SingleArticle() {
             <p>{article.body}</p>
           </main>
           <VoteAdder articleId={article.article_id} votes={article.votes} />
-          <br />
-          <div className="text-right underline">
-            <Link to={`/comments/${article.article_id}/new`}>
-              add a comment
-            </Link>
-          </div>
         </section>
         <section className="lg:basis-1/2 ">
           <CommentList articleId={article.article_id} />
-          <div className="text-right underline">
-            <Link to={`/comments/${article.article_id}/new`}>
-              add a comment
-            </Link>
-          </div>
           <br />
           <div className="text-right underline">
             <Link to={"/"}>back to articles</Link>
