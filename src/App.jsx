@@ -22,7 +22,7 @@ function App() {
           <Route path="/articles/:article_id" element={<SingleArticle />} />
           <Route
             path="/comments/:article_id/new"
-            element={<NewComment user={user} />}
+            element={<NewComment />}
           />
           <Route path="/error" element={<ErrorHandler />} />
           <Route path="/error/:resource/:status" element={<ErrorHandler />} />

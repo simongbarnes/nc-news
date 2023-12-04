@@ -5,8 +5,8 @@ import deleteComment from "../utils/deleteComment";
 export default function CommentDeleter({
   commentId,
   commentAuthor,
-  setCommentDeleted,
-  commentDeleted,
+  setCommentsRerender,
+  commentsRerender,
   setProgressMsg,
 }) {
   const [deleteBtnDisabled, setDeleteBtnDisabled] = useState(false);
@@ -18,7 +18,7 @@ export default function CommentDeleter({
     } else {
       setshowDeleteButton(false);
     }
-  }, [commentDeleted]);
+  }, [commentsRerender]);
 
   return (
     <>
@@ -31,7 +31,7 @@ export default function CommentDeleter({
             deleteComment(commentId)
               .then((response) => {
                 setProgressMsg("");
-                setCommentDeleted(true);
+                setCommentsRerender(true);
               })
               .catch((error) => {
                 setDeleteBtnDisabled(false);
