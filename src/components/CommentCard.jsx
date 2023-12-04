@@ -1,12 +1,11 @@
 import { useState } from "react";
 import convertTimeStamp from "../utils/convertTimeStamp";
-import votesImg from "../assets/thumbs-up.png";
 import CommentDeleter from "./CommentDeleter";
 
 export default function CommentCard({
   comment,
-  setCommentDeleted,
-  commentDeleted,
+  setCommentsRerender,
+  commentsRerender,
 }) {
   const [progressMsg, setProgressMsg] = useState("");
 
@@ -24,8 +23,8 @@ export default function CommentCard({
           <CommentDeleter
             commentId={comment.comment_id}
             commentAuthor={comment.author}
-            setCommentDeleted={setCommentDeleted}
-            commentDeleted={commentDeleted}
+            setCommentsRerender={setCommentsRerender}
+            commentsRerender={commentsRerender}
             setProgressMsg={setProgressMsg}
           />
         </section>

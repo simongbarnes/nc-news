@@ -3,7 +3,7 @@ import { postComment } from "../utils/postComment";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import fetchCurrentUser from "../utils/fetchCurrentUser";
 
-export default function NewComment() {
+export default function NewComment({setCommentsRerender, commentsRerender}) {
   const [inputBody, setInputBody] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [postBtnDisabled, setPostBtnDisabled] = useState(false);
@@ -16,14 +16,16 @@ export default function NewComment() {
     if (inputBody.trim().length === 0) {
       setErrorMsg("You can't post an empty comment");
     } else {
-      console.log(fetchCurrentUser());
       postComment({
         body: inputBody,
         username: fetchCurrentUser().username,
         articleId: article_id,
       })
         .then((response) => {
-          setErrorMsg("post successful!");
+          setErrorMsg("");
+          setInputBody("");
+          setCommentsRerender(true);
+          setPostBtnDisabled(false);
         })
         .catch((error) => {
           setPostBtnDisabled(false);
@@ -66,7 +68,10 @@ export default function NewComment() {
         />
         <div className="flex flex-flow">
           <div className="basis-1/2 text-right">
-            <button className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="cancelBtn" disabled={postBtnDisabled} type="button">
+            <button className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="cancelBtn" disabled={postBtnDisabled} type="button" onClick={() => {
+              setInputBody("");
+              setErrorMsg("");
+              }}>
               cancel
             </button>
           </div>

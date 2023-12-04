@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import convertTimeStamp from "../utils/convertTimeStamp";
 
 export default function FeatureArticle({ articleId }) {
-  console.log(articleId);
   const navigate = useNavigate();
   const [article, setArticle] = useState({});
   const [loading, setIsLoading] = useState(true);

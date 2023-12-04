@@ -56,7 +56,11 @@ export default function ArticlesList({ topic }) {
       <ul className="lg:columns-2">
         {articles.map((article, index) => {
           if (index === 0) {
-            return <FeatureArticle articleId={article.article_id} />;
+            return (
+              <li key={index}>
+                <FeatureArticle articleId={article.article_id} />
+              </li>
+            );
           } else {
             return (
               <li key={index}>
