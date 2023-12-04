@@ -31,7 +31,6 @@ export default function SingleArticle() {
   return (
     <>
       <div className="text-right underline mt-2">
-        <Link to={"/"}>back to articles</Link>
       </div>
       <div className="flex flex-wrap">
         <section className="lg:basis-1/2 p-4 border-b border-grey-100">
@@ -57,7 +56,6 @@ export default function SingleArticle() {
           <CommentList articleId={article.article_id} />
           <br />
           <div className="text-right underline">
-            <Link to={"/"}>back to articles</Link>
           </div>
         </section>
       </div>
