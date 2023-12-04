@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import fetchArticles from "../utils/fetchArticles";
-import TopicSelector from "./TopicSelector";
 import SortSelector from "./SortSelector";
 import FeatureArticle from "./FeatureArticle";
 
-export default function ArticlesList({ topic }) {
+export default function ArticlesList({ currentTopic, setCurrentTopic }) {
+
   const [articles, setArticles] = useState([]);
   const [loading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   let queries = {};
 
-  const [currentTopic, setCurrentTopic] = useState(topic);
   const [currentSort, setCurrentSort] = useState("created_at");
   const [currentOrder, setCurrentOrder] = useState("desc");
 
@@ -43,10 +42,6 @@ export default function ArticlesList({ topic }) {
 
   return (
     <>
-      <TopicSelector
-        currentTopic={currentTopic}
-        setCurrentTopic={setCurrentTopic}
-      />
       <SortSelector
         currentSort={currentSort}
         setCurrentSort={setCurrentSort}
