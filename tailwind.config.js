@@ -23,6 +23,7 @@ export default {
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
+        mono: ['Courier New', 'monospace']
       },
     },
     extend: {},

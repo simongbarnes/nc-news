@@ -22,12 +22,12 @@ export default function VoteAdder({ articleId, votes }) {
     <>
       <section className="flex flex-row text-md">
         <div className="basis-1/2"></div>
-        <div className="basis-6">
+        <div className="basis-7">
           <img src={votesImg} alt="a thumbs up icon"></img>
         </div>
         <p className="basis-6 pl-3 pr-3">{votes + newVote} </p>
         <button
-          className="basis-6 border mr-1 shadow"
+          className="font-mono text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-2 py-0.25 me-2 mb-6 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
           disabled={newVote === 1}
           aria-label="like"
           onClick={() => {
@@ -37,7 +37,7 @@ export default function VoteAdder({ articleId, votes }) {
           +
         </button>
         <button
-          className="basis-6 border shadow"
+          className="font-mono text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-2 py-0.25 me-2 mb-6 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
           disabled={newVote === -1}
           aria-label="dislike"
           onClick={() => {
