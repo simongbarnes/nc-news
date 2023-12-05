@@ -38,7 +38,7 @@ export default function ArticlesList({ currentTopic, setCurrentTopic }) {
       });
   }, [currentTopic, currentSort, currentOrder]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading Articles...</p>;
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function ArticlesList({ currentTopic, setCurrentTopic }) {
         currentOrder={currentOrder}
         setCurrentOrder={setCurrentOrder}
       />
-      <ul className="lg:columns-2">
+      <ul className="lg:columns-2 bg-white pr-4 pl-4 pb-4">
         {articles.map((article, index) => {
           if (index === 0) {
             return (

@@ -22,7 +22,7 @@ export default function NavBar({ currentTopic, setCurrentTopic }) {
       });
   }, []);
 
-  if (topicsLoading) return <p>Loading...</p>;
+  if (topicsLoading) return <p>Loading Nav Bar...</p>;
 
   return (
     <>
