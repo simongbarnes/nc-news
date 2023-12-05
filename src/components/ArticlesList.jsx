@@ -48,15 +48,13 @@ export default function ArticlesList({ currentTopic, setCurrentTopic }) {
         currentOrder={currentOrder}
         setCurrentOrder={setCurrentOrder}
       />
-      <ul className="lg:columns-2 bg-white pr-4 pl-4 pb-4">
+      <div className="flex flex-wrap">
+      <section className="lg:basis-1/2 p-4 border-b border-grey-100">
+      <FeatureArticle articleId={articles[0].article_id} />
+      </section>
+      <ul className="lg:basis-1/2 p-4 border-b border-grey-100">
         {articles.map((article, index) => {
-          if (index === 0) {
-            return (
-              <li key={index}>
-                <FeatureArticle articleId={article.article_id} />
-              </li>
-            );
-          } else {
+          if (index > 0) {
             return (
               <li key={index}>
                 <ArticleCard article={article} />
@@ -65,6 +63,7 @@ export default function ArticlesList({ currentTopic, setCurrentTopic }) {
           }
         })}
       </ul>
+      </div>
     </>
   );
 }
