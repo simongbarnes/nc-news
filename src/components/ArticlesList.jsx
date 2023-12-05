@@ -38,7 +38,7 @@ export default function ArticlesList({ currentTopic, setCurrentTopic }) {
       });
   }, [currentTopic, currentSort, currentOrder]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading Articles...</p>;
 
   return (
     <>
