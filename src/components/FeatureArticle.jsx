@@ -27,7 +27,7 @@ export default function FeatureArticle({ articleId }) {
 
   return (
     <>
-      <section className="p-4 border-b border-grey-100">
+      <section className="pb-4 border-b border-grey-100">
         <figure className="pb-4">
           <img
             src={article.article_img_url}

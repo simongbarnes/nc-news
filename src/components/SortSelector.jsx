@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-export default function SortSelector({ currentSort, setCurrentSort, currentOrder, setCurrentOrder }) {
+export default function SortSelector({
+  currentSort,
+  setCurrentSort,
+  currentOrder,
+  setCurrentOrder,
+}) {
   const sortOptions = [
     { column: "title", label: "title" },
     { column: "author", label: "author" },
@@ -11,9 +16,12 @@ export default function SortSelector({ currentSort, setCurrentSort, currentOrder
 
   return (
     <>
-      <form>
-        <label htmlFor="selected-sort">sort by: </label>
+      <form className="sm:text-center md:text-right bg-white ml-4 pr-4 pt-2 pb-2">
+        <label htmlFor="selected-sort" className="text-black mr-2">
+          sort by:
+        </label>
         <select
+          className="rounded-lg h-9 w-28 p-1 mr-2 bg-grey-800"
           name="sort"
           id="sort"
           onChange={(event) => {
@@ -29,6 +37,7 @@ export default function SortSelector({ currentSort, setCurrentSort, currentOrder
           })}
         </select>
         <select
+          className="rounded-lg h-9 w-32 p-1 bg-grey-800"
           name="order"
           id="order"
           onChange={(event) => {
