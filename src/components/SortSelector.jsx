@@ -7,9 +7,9 @@ export default function SortSelector({
   setCurrentOrder,
 }) {
   const sortOptions = [
+    { column: "created_at", label: "date" },
     { column: "title", label: "title" },
     { column: "author", label: "author" },
-    { column: "created_at", label: "date" },
     { column: "votes", label: "votes" },
     { column: "comment_count", label: "comments" },
   ];
@@ -44,11 +44,11 @@ export default function SortSelector({
             setCurrentOrder(event.target.value);
           }}
         >
-          <option key={"asc"} value="asc">
-            ascending
-          </option>
           <option key={"desc"} value="desc">
             descending
+          </option>
+          <option key={"asc"} value="asc">
+            ascending
           </option>
         </select>
       </form>
