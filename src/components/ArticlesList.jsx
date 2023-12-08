@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ArticleCard from "./ArticleCard";
 import fetchArticles from "../utils/fetchArticles";
+import toMixedCase from "../utils/toMixedCase";
 import SortSelector from "./SortSelector";
 import FeatureArticle from "./FeatureArticle";
 
-export default function ArticlesList({ currentTopic, setCurrentTopic }) {
-
+export default function ArticlesList({ currentTopic }) {
   const [articles, setArticles] = useState([]);
   const [loading, setIsLoading] = useState(true);
   const navigate = useNavigate();
@@ -42,27 +42,32 @@ export default function ArticlesList({ currentTopic, setCurrentTopic }) {
 
   return (
     <>
-      <SortSelector
-        currentSort={currentSort}
-        setCurrentSort={setCurrentSort}
-        currentOrder={currentOrder}
-        setCurrentOrder={setCurrentOrder}
-      />
+      <div className="flex flex-row">
+        <div className="text-xl font-bold self-center">{toMixedCase(currentTopic)}</div>
+        <div>
+          <SortSelector
+            currentSort={currentSort}
+            setCurrentSort={setCurrentSort}
+            currentOrder={currentOrder}
+            setCurrentOrder={setCurrentOrder}
+          />
+        </div>
+      </div>
       <div className="flex flex-wrap">
-      <section className="lg:basis-1/2 p-4 border-b border-grey-100">
-      <FeatureArticle articleId={articles[0].article_id} />
-      </section>
-      <ul className="lg:basis-1/2 p-4 border-b border-grey-100">
-        {articles.map((article, index) => {
-          if (index > 0) {
-            return (
-              <li key={index}>
-                <ArticleCard article={article} />
-              </li>
-            );
-          }
-        })}
-      </ul>
+        <section className="lg:basis-1/2 p-4 border-b border-grey-100">
+          <FeatureArticle articleId={articles[0].article_id} />
+        </section>
+        <ul className="lg:basis-1/2 p-4 border-b border-grey-100">
+          {articles.map((article, index) => {
+            if (index > 0) {
+              return (
+                <li key={index}>
+                  <ArticleCard article={article} />
+                </li>
+              );
+            }
+          })}
+        </ul>
       </div>
     </>
   );
