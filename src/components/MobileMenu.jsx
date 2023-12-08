@@ -9,26 +9,24 @@ export default function MobileMenu({
 }) {
   const navigate = useNavigate();
   const [displayMobileMenu, setDisplayMobileMenu] = useState("hidden");
- 
+
   useEffect(() => {
-  if (mobileMenuOpen) {
-    setDisplayMobileMenu("")
-  } else {
-    setDisplayMobileMenu("hidden")
-  }
-},[mobileMenuOpen]);
+    if (mobileMenuOpen) {
+      setDisplayMobileMenu("");
+    } else {
+      setDisplayMobileMenu("hidden");
+    }
+  }, [mobileMenuOpen]);
 
   return (
     <>
-      <div
-        className={`${displayMobileMenu}`}
-      >
+      <div className={`${displayMobileMenu}`}>
         <button
-          className="text-gray-200 bg-gray-800 focus:outline-none focus:font-bold focus:text-white font-medium rounded-lg px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          className="text-lg text-white text-left bg-black pl-6 w-40 focus:outline-none hover:font-bold dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
           type="button"
           key="home"
           onClick={() => {
-            setCurrentTopic("all");
+            setCurrentTopic("home");
             setMobileMenuOpen(false);
             navigate("/");
           }}
@@ -38,9 +36,8 @@ export default function MobileMenu({
         {topics.map((topic) => {
           return (
             <div>
-              <br></br>
               <button
-                className="text-gray-200 bg-gray-800 focus:outline-none focus:font-bold focus:text-white font-medium rounded-lg px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                className="text-lg text-white text-left bg-black pl-6 w-40 focus:outline-none hover:font-bold dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                 type="button"
                 key={topic.slug}
                 onClick={() => {

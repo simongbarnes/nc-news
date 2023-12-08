@@ -10,7 +10,6 @@ export default function Header({user, currentTopic, setCurrentTopic}) {
   const [topics, setTopics] = useState(true);
   const [topicsLoading, setTopicsLoading] = useState(true);
   const navigate = useNavigate();
-  // let displayMobileMenu = "hidden";
 
   useEffect(() => {
     fetchTopics()
@@ -28,12 +27,6 @@ export default function Header({user, currentTopic, setCurrentTopic}) {
   }, []);
 
   if (topicsLoading) return <p>Loading Header...</p>;
-
-    // if (mobileMenuOpen) {
-    //   displayMobileMenu = ""
-    // } else {
-    //   displayMobileMenu = "hidden"
-    // }
 
   return (
     <>

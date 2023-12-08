@@ -16,10 +16,7 @@ export default function SortSelector({
 
   return (
     <>
-      <form className="sm:text-center md:text-right bg-white ml-4 pr-4 pt-2 pb-2">
-        <label htmlFor="selected-sort" className="text-black mr-2">
-          sort by:
-        </label>
+      <form className="text-right bg-white ml-4 pr-4 pt-2 pb-2">
         <select
           className="rounded-lg h-9 w-28 p-1 mr-2 bg-grey-800"
           name="sort"

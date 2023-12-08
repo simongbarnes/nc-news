@@ -5,7 +5,7 @@ export default function fetchArticles({topic, sort, order}) {
   let path = ""
   let queryStr = `?sort_by=${sort}&&order=${order}`
 
-  if (topic !== "all"){
+  if (topic !== "home"){
     queryStr += `&&topic=${topic}`
   }
 

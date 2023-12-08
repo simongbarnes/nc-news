@@ -29,10 +29,10 @@ export default function NavBar({ currentTopic, setCurrentTopic }) {
       <nav className="flex flex-row bg-black">
         <div className="basis-1/2"></div>
         <button
-          className="text-lg text-gray-200 bg-gray-800 focus:outline-none focus:font-bold focus:text-white font-medium rounded-lg me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          className="text-lg text-white bg-black focus:outline-none hover:font-bold dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
           type="button"
           onClick={() => {
-            setCurrentTopic("all");
+            setCurrentTopic("home");
             navigate("/");
           }}
         >
@@ -42,7 +42,7 @@ export default function NavBar({ currentTopic, setCurrentTopic }) {
           {topics.map((topic) => {
             return (
               <button
-                className="text-lg text-gray-200 bg-gray-800 focus:outline-none focus:font-bold focus:text-white font-medium rounded-lg me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                className="text-lg text-white bg-black ml-3 focus:outline-none hover:font-bold dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                 type="button"
                 key={topic.slug}
                 onClick={() => {
