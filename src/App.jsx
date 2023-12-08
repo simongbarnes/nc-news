@@ -6,7 +6,6 @@ import fetchCurrentUser from "./utils/fetchCurrentUser";
 import SingleArticle from "./components/SingleArticle";
 import NewComment from "./components/NewComment";
 import ErrorHandler from "./components/ErrorHandler";
-import NavBar from "./components/NavBar";
 
 function App() {
   const [user, setUser] = useState(fetchCurrentUser());
@@ -15,13 +14,12 @@ function App() {
   return (
     <>
       <div className="container">
-        <Header user={user} />
-        <NavBar currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>
+        <Header user={user} currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>
         <Routes>
-          <Route path="/" element={<Home currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>} />
-          <Route path="/home" element={<Home currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>} />
-          <Route path="/articles" element={<Home currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>} />
-          <Route path="/articles/topics/:topic" element={<Home currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>} />
+          <Route path="/" element={<Home currentTopic={currentTopic}/>} />
+          <Route path="/home" element={<Home currentTopic={currentTopic}/>} />
+          <Route path="/articles" element={<Home currentTopic={currentTopic}/>} />
+          <Route path="/articles/topics/:topic" element={<Home currentTopic={currentTopic}/>} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
           <Route
             path="/comments/:article_id/new"

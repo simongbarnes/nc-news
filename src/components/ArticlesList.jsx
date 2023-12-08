@@ -5,7 +5,7 @@ import fetchArticles from "../utils/fetchArticles";
 import SortSelector from "./SortSelector";
 import FeatureArticle from "./FeatureArticle";
 
-export default function ArticlesList({ currentTopic, setCurrentTopic }) {
+export default function ArticlesList({ currentTopic }) {
 
   const [articles, setArticles] = useState([]);
   const [loading, setIsLoading] = useState(true);
