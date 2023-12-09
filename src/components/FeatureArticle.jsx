@@ -37,17 +37,17 @@ export default function FeatureArticle({ articleId }) {
         </figure>
         <h2 className="text-xl font-bold pb-3">{article.title}</h2>
         <div className="flex flex-row pb-4">
-        <p className="basis-1/2 text-left">
+        <p className="basis-1/2 text-left pr-2">
           by {article.author}
         </p>  
-        <p className="basis-1/2 text-right">
+        <p className="basis-1/2 lg:pr2 text-right">
           {convertTimeStamp(article.created_at)}
         </p>        
         </div>
-        <main className="pb-4">
+        <main className="pb-4 lg:pr2">
           <p>{takeExcerpt(article.body,500)}</p>
         </main>
-        <div className="text-right underline">
+        <div className="text-right underline lg:pr-2">
           <Link to={`/articles/${articleId}`}>
             read full article and comments
           </Link>

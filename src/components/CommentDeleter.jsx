@@ -43,6 +43,7 @@ export default function CommentDeleter({
           }}
         >
           <img
+            className="dark:invert"
             src={dustbinImg}
             alt="a dustbin icon"
             width="20px"

@@ -29,7 +29,7 @@ export default function NavBar({ currentTopic, setCurrentTopic }) {
       <nav className="flex flex-row bg-black">
         <div className="basis-1/2"></div>
         <button
-          className="text-lg text-white bg-black focus:outline-none hover:font-bold dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          className="text-lg text-white bg-black focus:outline-none hover:font-bold"
           type="button"
           onClick={() => {
             setCurrentTopic("home");
@@ -42,7 +42,7 @@ export default function NavBar({ currentTopic, setCurrentTopic }) {
           {topics.map((topic) => {
             return (
               <button
-                className="text-lg text-white bg-black ml-3 focus:outline-none hover:font-bold dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                className="text-lg text-white bg-black ml-3 focus:outline-none hover:font-bold"
                 type="button"
                 key={topic.slug}
                 onClick={() => {
