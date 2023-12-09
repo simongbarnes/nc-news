@@ -2,7 +2,7 @@ NC News is a news app that I developed while studying on the Northcoders Bootcam
 
 It can be found at https://coruscating-pixie-552827.netlify.app
 
-It's a React app which calls an Express Node.js API, accessing a PostGres database.
+It's a React app, styled with Tailwindcss, which calls an Express Node.js API, accessing a PostGres database.
 
 How to use the app:
 
