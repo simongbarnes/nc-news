@@ -2,6 +2,7 @@ import fetchArticle from "../utils/fetchArticle";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import convertTimeStamp from "../utils/convertTimeStamp";
+import takeExcerpt from "../utils/takeExcerpt";
 
 export default function FeatureArticle({ articleId }) {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ export default function FeatureArticle({ articleId }) {
         </p>        
         </div>
         <main className="pb-4">
-          <p>{article.body}</p>
+          <p>{takeExcerpt(article.body,500)}</p>
         </main>
         <div className="text-right underline">
           <Link to={`/articles/${articleId}`}>
