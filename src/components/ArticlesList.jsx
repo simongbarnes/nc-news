@@ -5,6 +5,8 @@ import fetchArticles from "../utils/fetchArticles";
 import toMixedCase from "../utils/toMixedCase";
 import SortSelector from "./SortSelector";
 import FeatureArticle from "./FeatureArticle";
+import buildSortQueryParms from "../utils/buildSortQuery";
+import getValidSortQueries from "../utils/getValidSortQueries";
 
 export default function ArticlesList({ currentTopic }) {
   const [articles, setArticles] = useState([]);
@@ -12,12 +14,13 @@ export default function ArticlesList({ currentTopic }) {
   const navigate = useNavigate();
   let queries = {};
 
-  const [currentSort, setCurrentSort] = useState("created_at");
-  const [currentOrder, setCurrentOrder] = useState("desc");
+  const [currentSort, setCurrentSort] = useState(getValidSortQueries()[0].label);
+
+  const sortQueryParms = buildSortQueryParms(currentSort);
 
   queries.topic = currentTopic;
-  queries.sort = currentSort;
-  queries.order = currentOrder;
+  queries.sort = sortQueryParms.column;
+  queries.order = sortQueryParms.order;
 
   useEffect(() => {
     fetchArticles(queries)
@@ -36,7 +39,7 @@ export default function ArticlesList({ currentTopic }) {
           navigate("/error/articles/noresponse");
         }
       });
-  }, [currentTopic, currentSort, currentOrder]);
+  }, [currentTopic, currentSort]);
 
   if (loading) return <p>Loading Articles...</p>;
 
@@ -45,12 +48,7 @@ export default function ArticlesList({ currentTopic }) {
       <div className="flex flex-row">
         <div className="text-xl font-bold self-center">{toMixedCase(currentTopic)}</div>
         <div>
-          <SortSelector
-            currentSort={currentSort}
-            setCurrentSort={setCurrentSort}
-            currentOrder={currentOrder}
-            setCurrentOrder={setCurrentOrder}
-          />
+          <SortSelector setCurrentSort={setCurrentSort} />
         </div>
       </div>
       <div className="flex flex-wrap">
