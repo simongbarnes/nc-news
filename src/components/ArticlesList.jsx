@@ -45,17 +45,17 @@ export default function ArticlesList({ currentTopic }) {
 
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row bg-white">
         <div className="basis-full text-xl font-bold self-center">{toMixedCase(currentTopic)}</div>
-        <div className="basis-9">
+        <div >
           <SortSelector setCurrentSort={setCurrentSort} />
         </div>
       </div>
       <div className="flex flex-wrap">
-        <section className="lg:basis-1/2 p-4 border-b border-grey-100">
+        <section className="lg:basis-1/2 pb-4 border-b border-grey-100">
           <FeatureArticle articleId={articles[0].article_id} />
         </section>
-        <ul className="lg:basis-1/2 p-4 border-b border-grey-100">
+        <ul className="lg:basis-1/2 border-b border-grey-100">
           {articles.map((article, index) => {
             if (index > 0) {
               return (

@@ -26,7 +26,7 @@ export default function ArticleCard(article) {
   return (
     <>
     <Link to={`/articles/${articleId}`}>
-      <section className="flex flex-row p-4 border-b border-gray-100">
+      <section className="flex flex-row pb-4 pt-4 lg:pl-4 border-b border-gray-100">
         <div className="basis-3/4">
           <header className="font-bold pb-3">
             {title}
