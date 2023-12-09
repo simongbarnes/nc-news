@@ -6,9 +6,9 @@ export default function SortSelector({setCurrentSort}) {
 
   return (
     <>
-      <form className=" ml-4 pt-2 pb-2">
+      <form className="ml-4 pt-2 pb-2">
         <select
-          className="border-none text-black focus:border-none rounded-lg h-9 w-36 p-1 mr-2 bg-white"
+          className="border-none focus:border-none rounded-lg h-9 w-36 p-1 mr-2 bg-white dark:bg-gray-900"
           name="sort"
           id="sort"
           onChange={(event) => {

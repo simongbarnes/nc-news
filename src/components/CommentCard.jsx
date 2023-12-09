@@ -11,7 +11,7 @@ export default function CommentCard({
 
   return (
     <>
-      <section className="p-4 border-b border-grey-100">
+      <section className="p-4 border-b border-gray-100 dark:border-gray-700">
         <div className="flex flex-row pb-4">
           <p className="basis-1/2 text-left">by {comment.author}</p>
           <time className="basis-1/2 text-right">

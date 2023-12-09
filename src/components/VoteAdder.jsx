@@ -22,7 +22,7 @@ export default function VoteAdder({ articleId, votes }) {
     <>
       <section className="flex flex-row text-md">
         <div className="basis-1/2"></div>
-        <div className="basis-7">
+        <div className="basis-7 dark:invert">
           <img src={votesImg} alt="a thumbs up icon"></img>
         </div>
         <p className="basis-6 pl-3 pr-3">{votes + newVote} </p>

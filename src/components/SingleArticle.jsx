@@ -1,5 +1,5 @@
 import fetchArticle from "../utils/fetchArticle";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import convertTimeStamp from "../utils/convertTimeStamp";
 import CommentList from "./CommentList";
@@ -33,7 +33,7 @@ export default function SingleArticle() {
       <div className="text-right underline mt-2">
       </div>
       <div className="flex flex-wrap">
-        <section className="lg:basis-1/2 p-4 border-b border-grey-100">
+        <section className="lg:basis-1/2 pt-4 pb-4 border-b border-gray-100 dark:border-gray-700">
           <figure className="pb-4">
             <img
               src={article.article_img_url}

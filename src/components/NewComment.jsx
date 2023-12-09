@@ -50,12 +50,12 @@ export default function NewComment({setCommentsRerender, commentsRerender}) {
   };
 
   return (
-    <div className="p-4 border-b border-grey-100">
+    <div className="p-4 border-b border-grey-100 dark:border-gray-700">
       <form onSubmit={addNewComment}>
         <h3 className="font-bold mb-2">Add a comment</h3>
         <label htmlFor="comment-body"></label>
         <textarea
-          className="w-full rounded-lg shadow-sm border-gray-300"
+          className="w-full rounded-lg shadow-sm border-gray-300 dark:border-gray-500 bg-white dark:bg-gray-900"
           id="comment-body"
           name="comment-body"
           rows="3"

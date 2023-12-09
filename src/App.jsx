@@ -13,7 +13,8 @@ function App() {
 
   return (
     <>
-      <div className="container">
+    <div className="text-black bg-white dark:text-white dark:bg-gray-900">
+      <div className="container dark:bg-gray-900">
         <Header user={user} currentTopic={currentTopic} setCurrentTopic={setCurrentTopic}/>
         <Routes>
           <Route path="/" element={<ArticlesList currentTopic={currentTopic}/>} />
@@ -29,6 +30,7 @@ function App() {
           <Route path="/error/:resource/:status" element={<ErrorHandler />} />
           <Route path="*" element={<Navigate to="/error" />} />
         </Routes>
+      </div>
       </div>
     </>
   );

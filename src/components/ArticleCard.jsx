@@ -26,21 +26,21 @@ export default function ArticleCard(article) {
   return (
     <>
     <Link to={`/articles/${articleId}`}>
-      <section className="flex flex-row pb-4 pt-4 lg:pl-4 border-b border-gray-100">
+      <section className="flex flex-row pb-4 pt-4 lg:pl-4 border-b border-gray-100 dark:border-gray-700">
         <div className="basis-3/4">
           <header className="font-bold pb-3">
             {title}
           </header>
           <div className="flex flex-row text-sm">
             <p className="basis-1/2">by {author}</p>
-            <div className="basis-5">
+            <div className="basis-5 dark:invert">
               <img
                 src={votesImg}
                 alt="a thumbs up icon"
               ></img>
             </div>
             <p className="basis-10 text-center">{votes}</p>
-            <div className="basis-5">
+            <div className="basis-5 dark:invert">
             <img src={comment} alt="comments icon"></img>
             </div>
             <p className="basis-10 text-center">{commentCount}</p>
