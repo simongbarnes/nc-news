@@ -46,8 +46,8 @@ export default function ArticlesList({ currentTopic }) {
   return (
     <>
       <div className="flex flex-row">
-        <div className="text-xl font-bold self-center">{toMixedCase(currentTopic)}</div>
-        <div>
+        <div className="basis-full text-xl font-bold self-center">{toMixedCase(currentTopic)}</div>
+        <div className="basis-9">
           <SortSelector setCurrentSort={setCurrentSort} />
         </div>
       </div>
