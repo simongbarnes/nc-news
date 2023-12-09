@@ -1,24 +1,14 @@
-import { useEffect, useState } from "react";
+import getValidSortQueries from "../utils/getValidSortQueries";
 
-export default function SortSelector({
-  currentSort,
-  setCurrentSort,
-  currentOrder,
-  setCurrentOrder,
-}) {
-  const sortOptions = [
-    { column: "created_at", label: "date" },
-    { column: "title", label: "title" },
-    { column: "author", label: "author" },
-    { column: "votes", label: "votes" },
-    { column: "comment_count", label: "comments" },
-  ];
+export default function SortSelector({setCurrentSort}) {
+
+  const sortOptions = getValidSortQueries();
 
   return (
     <>
-      <form className="text-right bg-white ml-4 pr-4 pt-2 pb-2">
+      <form className="bg-white ml-4 pr-4 pt-2 pb-2">
         <select
-          className="rounded-lg h-9 w-28 p-1 mr-2 bg-grey-800"
+          className="border-none text-black focus:border-none rounded-lg h-9 w-36 p-1 mr-2 bg-white"
           name="sort"
           id="sort"
           onChange={(event) => {
@@ -27,26 +17,11 @@ export default function SortSelector({
         >
           {sortOptions.map((sortOption) => {
             return (
-              <option key={sortOption.column} value={sortOption.column}>
+              <option key={sortOption.label} value={sortOption.label}>
                 {sortOption.label}
               </option>
             );
           })}
-        </select>
-        <select
-          className="rounded-lg h-9 w-32 p-1 bg-grey-800"
-          name="order"
-          id="order"
-          onChange={(event) => {
-            setCurrentOrder(event.target.value);
-          }}
-        >
-          <option key={"desc"} value="desc">
-            descending
-          </option>
-          <option key={"asc"} value="asc">
-            ascending
-          </option>
         </select>
       </form>
     </>
